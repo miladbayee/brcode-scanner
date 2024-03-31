@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Quagga from '@ericblade/quagga2';
 
@@ -85,7 +85,7 @@ const Scanner = ({
         }
     };
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         // if this component gets unmounted in the same tick that it is mounted, then all hell breaks loose,
         // so we need to wait 1 tick before calling init().  I'm not sure how to fix that, if it's even possible,
         // given the asynchronous nature of the camera functions, the non asynchronous nature of React, and just how
